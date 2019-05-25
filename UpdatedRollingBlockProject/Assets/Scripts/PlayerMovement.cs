@@ -20,10 +20,7 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetButtonDown(moveButton))
-        {
-            ThePlayer.AddForce(forceVector);
-        }
+        ThePlayer.AddForce(forceVector);
 
     }
 }

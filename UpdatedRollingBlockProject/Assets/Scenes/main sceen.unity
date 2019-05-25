@@ -209,9 +209,9 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 43bd759fd7f132043befa4347af0a6be, type: 3}
---- !u!4 &1114653702 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 5141060827140093160, guid: 43bd759fd7f132043befa4347af0a6be,
+--- !u!1 &765318817 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5141060827140093164, guid: 43bd759fd7f132043befa4347af0a6be,
     type: 3}
   m_PrefabInstance: {fileID: 535975114}
   m_PrefabAsset: {fileID: 0}
@@ -375,26 +375,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
---- !u!1 &2078250775 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6845151685964367411, guid: db97f69683518b343bb09e173b754801,
-    type: 3}
-  m_PrefabInstance: {fileID: 6845151684164653348}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &2078250779
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2078250775}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2fdf2eb3f1c914f318158000cb23150b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  cameraOffset: {x: 0, y: 1, z: -5}
-  ThingCameraIsFollowing: {fileID: 1114653702}
 --- !u!1001 &6845151684164653348
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -402,6 +382,21 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -6312698840686103506, guid: db97f69683518b343bb09e173b754801,
+        type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 765318817}
+    - target: {fileID: -6312698840686103506, guid: db97f69683518b343bb09e173b754801,
+        type: 3}
+      propertyPath: cameraOffset.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -6312698840686103506, guid: db97f69683518b343bb09e173b754801,
+        type: 3}
+      propertyPath: cameraOffset.z
+      value: -5
+      objectReference: {fileID: 0}
     - target: {fileID: 6845151685964367411, guid: db97f69683518b343bb09e173b754801,
         type: 3}
       propertyPath: m_Name

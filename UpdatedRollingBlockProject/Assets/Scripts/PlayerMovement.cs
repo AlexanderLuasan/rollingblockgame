@@ -6,21 +6,34 @@ public class PlayerMovement : MonoBehaviour
 {
     public Rigidbody ThePlayer;
     public float Speed;
-    public string moveButton;
-    Vector3 forceVector;
-
+    public Vector3 forwardVector;
+    private Vector3 forceVector;
 
     // Start is called before the first frame update
     void Start()
     {
-        forceVector = new Vector3(0f, 0f, Speed);
-        moveButton = "w";
+        forceVector = Vector3.Normalize(forwardVector) * Speed;
     }
 
     // Update is called once per frame
     void Update()
     {
-        ThePlayer.AddForce(forceVector);
+        if (Input.GetKey(KeyCode.W))
+        {
+            ThePlayer.AddForce(forceVector);
+        }
+        if (Input.GetKey(KeyCode.S))
+        {
+            ThePlayer.AddForce(forceVector * -1);
+        }
+        if (Input.GetKey(KeyCode.A))
+        {
+            ThePlayer.AddForce(forceVector);
+        }
+        if (Input.GetKey(KeyCode.D))
+        {
+            ThePlayer.AddForce(-1 * forceVector);
+        }
 
     }
 }

@@ -21,7 +21,7 @@ public class PlayerMovement : MonoBehaviour
     {
         if (Input.GetButtonDown(moveButton))
         {
-            ThePlayer.AddForce(forceVector)
+            ThePlayer.AddForce(forceVector);
         }
 
     }

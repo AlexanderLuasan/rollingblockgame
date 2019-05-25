@@ -4,8 +4,10 @@ using System;
 public class forwardvector : MonoBehaviour
 {
     public Vector3 forward;
-    private double sin = Math.Sin(.5);
-    private double cos = Math.Cos(.5);
+    private double sinpos = Math.Sin(.1);
+    private double cosneg = Math.Cos(-.1);
+    private double sinneg = Math.Sin(-.1);
+    private double cospos = Math.Cos(.1);
     // Start is called before the first frame update
     void Start()
     {
@@ -18,10 +20,19 @@ public class forwardvector : MonoBehaviour
         
         if (Input.GetKey("q"))
         {
-            float nx = (float)(forward.x * cos - forward.z * sin);
-            float nz = (float)(forward.x * sin + forward.z * cos);
+            float nx = (float)(forward.x * cosneg - forward.z * sinneg);
+            float nz = (float)(forward.x * sinneg + forward.z * cosneg);
             float ny = (float)forward.y;
             forward.Set(nx, ny, nz);
         }
+
+        if (Input.GetKey("e"))
+        {
+            float nx = (float)(forward.x * cospos - forward.z * sinpos);
+            float nz = (float)(forward.x * sinpos + forward.z * cospos);
+            float ny = (float)forward.y;
+            forward.Set(nx, ny, nz);
+        }
+
     }
 }

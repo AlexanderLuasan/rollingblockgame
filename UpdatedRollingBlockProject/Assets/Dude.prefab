@@ -137,4 +137,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4f7c20fc97d9ed649a7e4ac565de338c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  forward: {x: 0, y: 0, z: 0}
+  forward: {x: 0, y: 0, z: 1}

@@ -14,6 +14,7 @@ public class PlayerMovement : MonoBehaviour
     void Start()
     {
         forceVector = new Vector3(0f, 0f, Speed);
+        moveButton = "w";
     }
 
     // Update is called once per frame

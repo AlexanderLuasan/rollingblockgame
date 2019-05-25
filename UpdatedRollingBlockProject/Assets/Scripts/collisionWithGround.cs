@@ -9,9 +9,7 @@ public class collisionWithGround : MonoBehaviour
     {
         if (collisionInfo.collider.tag == "ground")
         {
-            Debug.Log("hit Ground");
+            //Debug.Log("hit Ground");
         }
-
-
     }
 }

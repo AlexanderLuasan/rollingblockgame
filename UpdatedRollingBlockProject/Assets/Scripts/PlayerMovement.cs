@@ -20,6 +20,7 @@ public class PlayerMovement : MonoBehaviour
     {
         forceVector = input.getForward() * Speed;
         leftVector = input.getLeft() * Speed;
+
         if (Input.GetKey(KeyCode.W))
         {
             ThePlayer.AddForce(forceVector);

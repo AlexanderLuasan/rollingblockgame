@@ -4,15 +4,31 @@ using System;
 public class forwardvector : MonoBehaviour
 {
     public Vector3 forward;
-    private double sinpos = Math.Sin(.1);
-    private double cosneg = Math.Cos(-.1);
-    private double sinneg = Math.Sin(-.1);
-    private double cospos = Math.Cos(.1);
+    private Vector3 left;
+    private double sinpos = Math.Sin(.01);
+    private double cosneg = Math.Cos(-.01);
+    private double sinneg = Math.Sin(-.01);
+    private double cospos = Math.Cos(.01);
+    private Vector3 upVector = new Vector3(0f, 1f, 0);
+
+
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        left = Vector3.Cross(forward, upVector);
     }
+
+    public Vector3 getLeft()
+    {
+        return left;
+    }
+
+    public Vector3 getforward()
+    {
+        return forward;
+    }
+
 
     // Update is called once per frame
     void Update()
@@ -24,6 +40,8 @@ public class forwardvector : MonoBehaviour
             float nz = (float)(forward.x * sinneg + forward.z * cosneg);
             float ny = (float)forward.y;
             forward.Set(nx, ny, nz);
+            left = Vector3.Cross(forward, upVector);
+
         }
 
         if (Input.GetKey("e"))
@@ -32,6 +50,7 @@ public class forwardvector : MonoBehaviour
             float nz = (float)(forward.x * sinpos + forward.z * cospos);
             float ny = (float)forward.y;
             forward.Set(nx, ny, nz);
+            left = Vector3.Cross(forward, upVector);
         }
 
     }

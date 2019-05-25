@@ -6,16 +6,15 @@ public class PlayerMovement : MonoBehaviour
 {
     public Rigidbody ThePlayer;
     public float Speed;
-    public Vector3 forwardVector;
+    public forwardvector input;
     private Vector3 forceVector;
     private Vector3 leftVector;
 
     // Start is called before the first frame update
     void Start()
     {
-        forceVector = Vector3.Normalize(forwardVector) * Speed;
-        Vector3 upVector = new Vector3(0f, 1f, 0);
-        leftVector = Vector3.Cross(forceVector, upVector);
+        forceVector = input.getforward();
+        leftVector = input.getLeft();
     }
 
     // Update is called once per frame

@@ -24,7 +24,7 @@ public class forwardvector : MonoBehaviour
         return left;
     }
 
-    public Vector3 getforward()
+    public Vector3 getForward()
     {
         return forward;
     }
@@ -40,7 +40,11 @@ public class forwardvector : MonoBehaviour
             float nz = (float)(forward.x * sinneg + forward.z * cosneg);
             float ny = (float)forward.y;
             forward.Set(nx, ny, nz);
-            left = Vector3.Cross(forward, upVector);
+
+            float nxl = (float)(left.x * cosneg - left.z * sinneg);
+            float nzl = (float)(left.x * sinneg + left.z * cosneg);
+            float nyl = (float)left.y;
+            left.Set(nxl, nyl, nzl);
 
         }
 
@@ -50,7 +54,11 @@ public class forwardvector : MonoBehaviour
             float nz = (float)(forward.x * sinpos + forward.z * cospos);
             float ny = (float)forward.y;
             forward.Set(nx, ny, nz);
-            left = Vector3.Cross(forward, upVector);
+
+            float nxl = (float)(left.x * cospos - left.z * sinpos);
+            float nzl = (float)(left.x * sinpos + left.z * cospos);
+            float nyl = (float)left.y;
+            left.Set(nxl, nyl, nzl);
         }
 
     }

@@ -13,13 +13,13 @@ public class PlayerMovement : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        forceVector = input.getforward();
-        leftVector = input.getLeft();
     }
 
     // Update is called once per frame
     void Update()
     {
+        forceVector = input.getForward() * Speed;
+        leftVector = input.getLeft() * Speed;
         if (Input.GetKey(KeyCode.W))
         {
             ThePlayer.AddForce(forceVector);

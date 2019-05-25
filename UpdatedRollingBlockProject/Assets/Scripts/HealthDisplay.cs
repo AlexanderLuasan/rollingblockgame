@@ -5,12 +5,18 @@ using UnityEngine.UI;
 
 public class HealthDisplay : MonoBehaviour
 {
-
+    public Text scoreText;
     private int score;
-    public string scoreText;
+
     // Start is called before the first frame update
     void Start()
     {
-        scoreText = "ScoreText: " + score;
+        scoreText.text = "Score: " + score;
+    }
+
+    void addToScore(int amount)
+    {
+        score += amount;
+        scoreText.text = "Score: " + score;
     }
 }

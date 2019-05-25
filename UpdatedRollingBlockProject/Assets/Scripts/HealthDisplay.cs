@@ -14,7 +14,7 @@ public class HealthDisplay : MonoBehaviour
         scoreText.text = "Score: " + score;
     }
 
-    void addToScore(int amount)
+    public void addToScore(int amount)
     {
         score += amount;
         scoreText.text = "Score: " + score;

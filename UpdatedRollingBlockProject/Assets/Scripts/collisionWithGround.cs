@@ -4,14 +4,16 @@ using UnityEngine;
 
 public class collisionWithGround : MonoBehaviour
 {
+    public HealthDisplay HPdisp;
+    private bool hasHitGround = false;
 
     void OnCollisionEnter(Collision collisionInfo)
     {
-        if (collisionInfo.collider.tag == "ground")
+        if (hasHitGround && collisionInfo.collider.tag == "ground")
         {
-            Debug.Log("hit Ground");
+            HPdisp.addToScore(1);
+            hasHitGround = true;
+# Destroy(self)
         }
-
-
     }
 }
